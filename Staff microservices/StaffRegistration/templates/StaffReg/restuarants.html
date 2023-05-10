@@ -1,0 +1,18 @@
+{% extends "staff/base.html" %}
+{% block content %}
+    {% for restuarant in restuarants %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+            <h2> <a class="mr-2" href="#">{{ restuarant.name }}</a> </h2>
+            <small class="text-muted">{{ restuarant.date|date:"F d, Y" }}</small>
+           
+          </div>
+          <h4> Email: <a class="mr-2" href="#">{{ restuarant.email }}</a> </h4>
+          <h4>Contact_No:  <a class="mr-2" href="#">{{ restuarant.phone }}</a> </h4>
+          <h4> Address: <a class="mr-2" href="#">{{ restuarant.add }}</a> </h4>
+          <h5> Assigned Staff:   <a class="article-content">{{ restuarant.staff }}</a> </h5>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

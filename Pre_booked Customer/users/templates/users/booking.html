@@ -1,0 +1,19 @@
+{% extends "users/base.html" %}
+{% block content %}
+    {% for booking in bookings %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+            <h4> Customer: <a class="mr-2" href="#">{{ booking.customer }}</a> </h4>
+            
+              <small class="text-muted">{{ booking.date_posted|date:"F d, Y" }}</small>
+            </div>
+            
+            <h2>Table_Number: <a class="article-title" href="#">{{ booking.table_no }}</a></h2>
+            <h4> Contact Details: <a class="article-title" href="#">{{ booking.phone }}</a></h4>
+            <h4> Address: <a class="article-title" href="#">{{ booking.add }}</a></h4>
+            <h4> Order:</h4><p class="article-content">{{ booking.order }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
